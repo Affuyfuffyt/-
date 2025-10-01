@@ -1,9 +1,15 @@
 import type { Metadata } from "next";
+import { Noto_Kufi_Arabic } from 'next/font/google'
 import "./globals.css";
 
+const arabicFont = Noto_Kufi_Arabic({
+  subsets: ['arabic'],
+  display: 'swap',
+})
+
 export const metadata: Metadata = {
-  title: "Bodi",
-  description: "A minimalist canvas for the word 'Bodi'.",
+  title: "تسجيل الدخول | بودي",
+  description: "صفحة تسجيل دخول بتصميم مستوحى من أندرويد.",
 };
 
 export default function RootLayout({
@@ -12,7 +18,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ar" dir="rtl">
+    <html lang="ar" dir="rtl" className={arabicFont.className}>
       <body>{children}</body>
     </html>
   );
